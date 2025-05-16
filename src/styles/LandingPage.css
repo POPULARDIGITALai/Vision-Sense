@@ -1,0 +1,237 @@
+/* Reset some basic elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.landing-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Left panel styling - now with background image */
+.landing-left-panel {
+  width: 50%;
+  background-image: url('/security-background.jpg'); /* Add this image to your public folder */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Overlay to ensure text is readable on the image */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 23, 48, 0.7); /* Semi-transparent dark blue */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.landing-content {
+  max-width: 500px;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.landing-left-panel h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.landing-left-panel p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Right panel styling - white background with subtle styling */
+.landing-right-panel {
+  width: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+  margin-bottom: 3rem;
+}
+
+.logo {
+  width: 260px; /* Increased size */
+  height: auto;
+  object-fit: contain;
+  max-height: 260px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-section h3 {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.login-button {
+  background: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%);
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  padding: 14px 0;
+  font-size: 1.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.login-button:hover {
+  background: linear-gradient(90deg, #1D4ED8 0%, #2563EB 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #555;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.tagline:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%);
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .landing-left-panel h1 {
+    font-size: 2.8rem;
+  }
+  
+  .logo {
+    width: 220px;
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+  }
+  
+  .landing-left-panel, .landing-right-panel {
+    width: 100%;
+  }
+  
+  .landing-left-panel {
+    height: 40vh;
+  }
+  
+  .landing-right-panel {
+    height: 60vh;
+  }
+  
+  .landing-left-panel h1 {
+    font-size: 2.2rem;
+  }
+  
+  .landing-left-panel p {
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    width: 180px;
+    max-height: 180px;
+  }
+  
+  .logo-container {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .login-section h3 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-left-panel h1 {
+    font-size: 1.8rem;
+  }
+  
+  .landing-left-panel p {
+    font-size: 1rem;
+  }
+  
+  .login-button {
+    padding: 12px 0;
+  }
+  
+  .logo {
+    width: 160px;
+    max-height: 160px;
+  }
+}
